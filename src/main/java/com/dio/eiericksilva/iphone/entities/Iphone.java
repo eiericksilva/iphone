@@ -54,6 +54,7 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
         final int prime = 31;
         int result = 1;
         result = prime * result + ((imei == null) ? 0 : imei.hashCode());
+        result = prime * result + ((numeroSerie == null) ? 0 : numeroSerie.hashCode());
         return result;
     }
 
@@ -70,6 +71,11 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
             if (other.imei != null)
                 return false;
         } else if (!imei.equals(other.imei))
+            return false;
+        if (numeroSerie == null) {
+            if (other.numeroSerie != null)
+                return false;
+        } else if (!numeroSerie.equals(other.numeroSerie))
             return false;
         return true;
     }
